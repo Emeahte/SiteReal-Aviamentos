@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real aviamentos</title>
+    <link rel="stylesheet" href="caixa.css">
+    <style>
+
+        body{
+            background-color: lightslategray;
+        }
+        h1{
+            background-color: orangered;
+            
+        }
+
+        label{
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: orangered;
+
+        }
+
+        li {
+            float: left;
+            border: 2px solid;
+            
+            border-color: black;
+          }
+
+        li a {
+          display: block;
+          color: black;
+          text-align: center;
+          padding: 19px 72px;
+          text-decoration: none;
+          }
+          li a:hover:not(.active) {
+            background-color: lightsalmon;
+          }
+          .active {
+            background-color: chocolate;
+          }
+          .color-box {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <picture>
+            <img class="imagem" src="imagens/RealAviamentosLogo.jpeg" alt="RealAviamentosLogo">
+        </picture>
+
+        <label>
+            <input placeholder="Barra de pesquisas" type="search" name="pesquisa">
+        </label>
+    </h1>
+    <ul>
+      <li><a class="active"  href="#">Linhas</a></li>
+      <li><a href="#">Botões</a></li>
+      <li><a href="#">Agulhas</a></li>
+      <li><a href="#">Barbante</a></li>
+      <li><a href="#">Zipper</a></li>
+    </ul>
+
+    <h2>
+        <p>Temos dois tipos de linha:</p>
+        <p> Sol:
+            <picture>
+                <img class="imagem" src="Imagens/Produtos/linhaSol2.jpg" alt="Sol">
+            </picture>
+        </p>
+        <p> Kron:
+            <picture>
+                <img class="imagem" src="Imagens/Produtos/linhaKron2.webp" alt="Sol">
+            </picture>
+        </p>
+    </h2>
+
+    <h1>Escolha uma Cor:</h1>
+    <div id="color-palette">
+        <div class="color-box" style="background-color: red;"></div>
+        <div class="color-box" style="background-color: green;"></div>
+        <div class="color-box" style="background-color: blue;"></div>
+        <div class="color-box" style="background-color: yellow;"></div>
+        <div class="color-box" style="background-color: orange;"></div>
+        <div class="color-box" style="background-color: purple;"></div>
+    </div>
+    <p>Cor Selecionada: <span id="selected-color"></span></p>
+
+    <script>
+        const colorBoxes = document.querySelectorAll('.color-box');
+        const selectedColorSpan = document.getElementById('selected-color');
+
+        colorBoxes.forEach(box => {
+            box.addEventListener('click', () => {
+                const selectedColor = box.style.backgroundColor;
+                selectedColorSpan.textContent = selectedColor;
+            });
+        });
+    </script>
+</body>
+</html>
